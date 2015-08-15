@@ -3,6 +3,10 @@
   "version": "1.0.0",
   "description": "Utility functions for working with tweets.",
   "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/UsabilityEtc/tweet-utils-js.git"
+  },
   "author": {
     "name": "Jeffrey Morgan",
     "email": "usabilityetc@gmail.com",
