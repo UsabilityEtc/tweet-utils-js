@@ -1,0 +1,30 @@
+{
+  "name": "tweet-utils-js",
+  "version": "1.0.0",
+  "description": "Utility functions for working with tweets.",
+  "license": "MIT",
+  "author": {
+    "name": "Jeffrey Morgan",
+    "email": "usabilityetc@gmail.com",
+    "url": "http://usabilityetc.com"
+  },
+  "main": "index.js",
+  "scripts": {
+    "test": "jasmine-node spec --verbose"
+  },
+  "keywords": [
+    "Twitter",
+    "tweet",
+    "geocoding",
+    "latitude",
+    "longitude",
+    "hashtags",
+    "mentions"
+  ],
+  "devDependencies": {
+    "grunt-contrib-coffee": "^0.13.0",
+    "grunt-contrib-watch": "^0.6.1",
+    "grunt-jasmine-nodejs": "^1.4.2",
+    "jasmine-node": "^1.14.5"
+  }
+}
