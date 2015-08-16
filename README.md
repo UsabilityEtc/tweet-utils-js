@@ -11,7 +11,7 @@ npm install tweet-utils-js
 ## Use
 
 ```
-var TweetUtils = require("tweet-utils-js");
+var TweetUtils = require('tweet-utils-js');
 
 var aTweet = ...; // A JSON-format object retrieved from the Twitter API
 
@@ -40,16 +40,24 @@ Returns the geocoded location in a tweet as an object with `latitude` and `longi
 
 **extractUserMentions**([*tweet*])
 
-Returns an array of the Twitter-user screen names mentioned in a tweet (without the @ prefix). The array will be empty if the tweet is `null` or does not mention any Twitter users. Example output:
+Returns an array of the Twitter-user screen names mentioned in a tweet (without the @ prefix). The array will be empty if the tweet is `null` or does not mention any Twitter users. For example, the output for the tweet:
+
+> @BBCNews and @CNN are reporting the story live.
+
+would be:
 
 ```
-["BBCNews", "CNN"]
+['BBCNews', 'CNN']
 ```
 
 **extractHashtags**([*tweet*])
 
-Returns an array of the hashtags used in the text of a tweet (without the # prefix). The array will be empty if the tweet is null or does not contain any hashtags. Example output:
+Returns an array of the hashtags used in the text of a tweet (without the # prefix). The array will be empty if the tweet is null or does not contain any hashtags. For example, the output for the tweet:
+
+> It's great to #opensource your #nodejs code!
+
+would be:
 
 ```
-["opensource"]
+['opensource', 'nodejs']
 ```
