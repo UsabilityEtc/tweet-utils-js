@@ -6,16 +6,19 @@ extractGeocoding = (tweet) ->
     latitude = longitude = null
     if tweet.coordinates and tweet.coordinates.coordinates
       coordinatesArray = tweet.coordinates.coordinates
-      latitude = coordinatesArray[1]
       longitude = coordinatesArray[0]
+      latitude = coordinatesArray[1]
     else if tweet.geo and tweet.geo.coordinates
+      # The geo key
+      # - is deprecated by Twitter so the coordinates key (above) is preferred
+      # - records the coordinates in the order [latitude, longitude]
       coordinatesArray = tweet.geo.coordinates
-      latitude = coordinatesArray[0]
       longitude = coordinatesArray[1]
+      latitude = coordinatesArray[0]
     if latitude and longitude
       coordinatesObject =
-        latitude: latitude,
-        longitude: longitude
+        longitude: longitude,
+        latitude: latitude
   coordinatesObject
 
 extractUserMentions = (tweet) ->
