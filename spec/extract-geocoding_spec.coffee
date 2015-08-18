@@ -1,6 +1,6 @@
 'use strict'
 
-extractGeocoding = require("../index").extractGeocoding
+extractGeocoding = require("../index.min").extractGeocoding
 
 describe "The extractGeocoding() function", ->
 

@@ -5,7 +5,7 @@ tweetsPath = "./spec/tweets/user-mentions";
 oneUserMentionsTweet = JSON.parse(fs.readFileSync("#{tweetsPath}/one-user-mention.json", "utf8"))
 twoUserMentionsTweet = JSON.parse(fs.readFileSync("#{tweetsPath}/two-user-mentions.json", "utf8"))
 threeUserMentionsTweet = JSON.parse(fs.readFileSync("#{tweetsPath}/three-user-mentions.json", "utf8"))
-extractUserMentions = require("../index").extractUserMentions
+extractUserMentions = require("../index.min").extractUserMentions
 
 describe "The extractUserMentions() function", ->
 

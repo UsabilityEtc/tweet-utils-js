@@ -5,7 +5,7 @@ tweetsPath = "./spec/tweets/hashtags";
 oneHashtagTweet = JSON.parse(fs.readFileSync("#{tweetsPath}/one-hashtag.json", "utf8"))
 twoHashtagTweet = JSON.parse(fs.readFileSync("#{tweetsPath}/two-hashtags.json", "utf8"))
 threeHashtagTweet = JSON.parse(fs.readFileSync("#{tweetsPath}/three-hashtags.json", "utf8"))
-extractHashtags = require("../index").extractHashtags
+extractHashtags = require("../index.min").extractHashtags
 
 describe "The extractHashtags() function", ->
 

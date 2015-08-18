@@ -12,7 +12,7 @@
     "email": "usabilityetc@gmail.com",
     "url": "http://usabilityetc.com"
   },
-  "main": "index.js",
+  "main": "index.min.js",
   "keywords": [
     "Twitter",
     "tweet",
@@ -24,6 +24,7 @@
   ],
   "devDependencies": {
     "grunt-contrib-coffee": "^0.13.0",
+    "grunt-contrib-uglify": "^0.9.1",
     "grunt-contrib-watch": "^0.6.1",
     "grunt-jasmine-nodejs": "^1.4.2"
   }

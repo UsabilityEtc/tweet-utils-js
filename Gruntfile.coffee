@@ -5,8 +5,13 @@ module.exports = (grunt) ->
     coffee:
       compile:
         files:
-          'index.js': ['src/*.coffee']
+          'src/index.js': ['src/*.coffee']
           'spec/index_spec.js': ['spec/*.coffee']
+
+    uglify:
+      my_target:
+        files:
+          'index.min.js': 'src/index.js'
 
     jasmine_nodejs:
       options:
@@ -29,10 +34,11 @@ module.exports = (grunt) ->
         files: '**/*.coffee'
         tasks: ['test']
 
-  grunt.loadNpmTasks('grunt-contrib-watch')
   grunt.loadNpmTasks('grunt-contrib-coffee')
+  grunt.loadNpmTasks('grunt-contrib-uglify')
   grunt.loadNpmTasks('grunt-jasmine-nodejs')
+  grunt.loadNpmTasks('grunt-contrib-watch')
 
-  grunt.registerTask('build', ['coffee'])
+  grunt.registerTask('build', ['coffee', 'uglify'])
   grunt.registerTask('test', ['jasmine_nodejs'])
   grunt.registerTask('default', ['build', 'test'])
