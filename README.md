@@ -23,6 +23,11 @@ var userMentions = TweetUtils.extractUserMentions(aTweet);
 
 // Hashtags
 var hashtags = TweetUtils.extractHashtags(aTweet);
+
+// Retweets
+if (TweetUtils.isRetweet(aTweet)) {
+  // do something with the retweet
+}
 ```
 
 ## API
@@ -61,3 +66,15 @@ would be:
 ```
 ['opensource', 'nodejs']
 ```
+
+**isRetweet**([*tweet*])
+
+Returns `true` if the tweet is a retweet. A tweet is retweeted when users press the retweet button of a Twitter user interface or when they prefix the tweet text with "RT" or "RT:". For example, the output for the following tweets would be `true`:
+
+> RT @BBCNews and @CNN are reporting the story live.
+
+> RT: @BBCNews and @CNN are reporting the story live.
+
+In constrast, the output for the following tweet would be `false`:
+
+> @BBCNews and @CNN are reporting the story live.

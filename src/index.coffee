@@ -17,8 +17,8 @@ extractGeocoding = (tweet) ->
       latitude = coordinatesArray[0]
     if latitude and longitude
       coordinatesObject =
-        longitude: longitude,
-        latitude: latitude
+        latitude: latitude,
+        longitude: longitude
   coordinatesObject
 
 extractUserMentions = (tweet) ->
@@ -35,7 +35,15 @@ extractHashtags = (tweet) ->
     hashtagsArray.push(hashtag.text) for hashtag in hashtags
   hashtagsArray
 
+retweetPattern = /^RT:? /
+isRetweet = (tweet) ->
+  if tweet
+    return true if tweet.retweeted_status
+    return true if tweet.text and retweetPattern.test tweet.text
+  return false
+
 module.exports =
   extractGeocoding: extractGeocoding
   extractUserMentions: extractUserMentions
   extractHashtags: extractHashtags
+  isRetweet: isRetweet
