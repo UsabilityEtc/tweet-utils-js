@@ -1,6 +1,6 @@
 # tweet-utils-js
 
-**tweet-utils-js** is a JavaScript library of functions for working with tweets in JSON format return by the [Twitter API](https://dev.twitter.com/rest/public).
+**tweet-utils-js** is a JavaScript library of functions for working with tweets in JSON format returned by the [Twitter API](https://dev.twitter.com/rest/public).
 
 ## Installation
 
