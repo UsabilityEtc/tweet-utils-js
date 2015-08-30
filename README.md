@@ -32,7 +32,7 @@ if (TweetUtils.isRetweet(aTweet)) {
 
 ## API
 
-**extractGeocoding**([*tweet*])
+**extractGeocoding**(*tweet*)
 
 Returns the geocoded location in a tweet as an object with `latitude` and `longitude` keys, or `null` if the tweet is `null` or does not contain a geocoded location. This function returns an object with keys that explicitly label the latitude and longitude values to avoid the confusing and error-prone use of two-element arrays. Example output:
 
@@ -43,7 +43,7 @@ Returns the geocoded location in a tweet as an object with `latitude` and `longi
 }
 ```
 
-**extractUserMentions**([*tweet*])
+**extractUserMentions**(*tweet*)
 
 Returns an array of the Twitter-user screen names mentioned in a tweet (without the @ prefix). The array will be empty if the tweet is `null` or does not mention any Twitter users. For example, the output for the tweet:
 
@@ -55,7 +55,7 @@ would be:
 ['BBCNews', 'CNN']
 ```
 
-**extractHashtags**([*tweet*])
+**extractHashtags**(*tweet*)
 
 Returns an array of the hashtags used in the text of a tweet (without the # prefix). The array will be empty if the tweet is null or does not contain any hashtags. For example, the output for the tweet:
 
@@ -67,7 +67,7 @@ would be:
 ['opensource', 'nodejs']
 ```
 
-**isRetweet**([*tweet*])
+**isRetweet**(*tweet*)
 
 Returns `true` if the tweet is a retweet. A tweet is retweeted when users press the retweet button of a Twitter user interface or when they prefix the tweet text with "RT" or "RT:". For example, the output for the following tweets would be `true`:
 
