@@ -24,6 +24,9 @@ var userMentions = TweetUtils.extractUserMentions(aTweet);
 // Hashtags
 var hashtags = TweetUtils.extractHashtags(aTweet);
 
+// URLs
+var urls = TweetUtils.extractURLs(aTweet);
+
 // Retweets
 if (TweetUtils.isRetweet(aTweet)) {
   // do something with the retweet
@@ -66,6 +69,20 @@ would be:
 ```
 ['opensource', 'nodejs']
 ```
+
+**extractURLs**(*tweet*)
+
+Returns an array of the URLs used in the text of a tweet. The array will be empty if the tweet is null or does not contain any URLs. For example, the output for the tweet:
+
+> Learn about NodeJS and npm at https://nodejs.org/ and https://www.npmjs.com/
+
+would be:
+
+```
+['https://nodejs.org/', 'https://www.npmjs.com/']
+```
+
+The `extractURLs` function returns the full-length, expanded form of the URL when it is available; otherwise the default form is returned, which will often be a [shortened URL](https://en.wikipedia.org/wiki/URL_shortening).
 
 **isRetweet**(*tweet*)
 

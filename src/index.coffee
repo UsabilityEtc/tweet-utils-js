@@ -22,18 +22,29 @@ extractGeocoding = (tweet) ->
   coordinatesObject
 
 extractUserMentions = (tweet) ->
-  userMentionsArray = [];
+  userMentionsArray = []
   if tweet and tweet.entities and tweet.entities.user_mentions
       userMentions = tweet.entities.user_mentions
       userMentionsArray.push(userMention.screen_name) for userMention in userMentions
   userMentionsArray
 
 extractHashtags = (tweet) ->
-  hashtagsArray = [];
+  hashtagsArray = []
   if tweet and tweet.entities and tweet.entities.hashtags
     hashtags = tweet.entities.hashtags
     hashtagsArray.push(hashtag.text) for hashtag in hashtags
   hashtagsArray
+
+extractURLs = (tweet) ->
+  urlsArray = []
+  if tweet and tweet.entities and tweet.entities.urls
+    urls = tweet.entities.urls
+    urlsArray.push(preferExpandedURL(url)) for url in urls
+  urlsArray
+
+preferExpandedURL = (urlObject) ->
+  return urlObject.expanded_url if urlObject.expanded_url
+  urlObject.url
 
 retweetPattern = /^RT:? /
 isRetweet = (tweet) ->
@@ -46,4 +57,5 @@ module.exports =
   extractGeocoding: extractGeocoding
   extractUserMentions: extractUserMentions
   extractHashtags: extractHashtags
+  extractURLs: extractURLs
   isRetweet: isRetweet
