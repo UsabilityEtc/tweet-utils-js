@@ -1,1 +1,1 @@
-{"entities":{"user_mentions":[{"indices":[1,15],"screen_name":"user1","id_str":"123","name":"User One","id":123}]}}
+{"entities":{"user_mentions":[{"screen_name":"user1"}]}}
