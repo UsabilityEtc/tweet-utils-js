@@ -10,7 +10,7 @@ npm install tweet-utils-js
 
 ## Use
 
-```
+```javascript
 var TweetUtils = require('tweet-utils-js');
 
 var aTweet = ...; // A JSON-format object retrieved from the Twitter API
@@ -39,7 +39,7 @@ if (TweetUtils.isRetweet(aTweet)) {
 
 Returns the geocoded location in a tweet as an object with `latitude` and `longitude` keys, or `null` if the tweet is `null` or does not contain a geocoded location. This function returns an object with keys that explicitly label the latitude and longitude values to avoid the confusing and error-prone use of two-element arrays. Example output:
 
-```
+```javascript
 {
   longitude: 51.500152,
   latitude: -0.126236
@@ -54,7 +54,7 @@ Returns an array of the Twitter-user screen names mentioned in a tweet (without 
 
 would be:
 
-```
+```javascript
 ['BBCNews', 'CNN']
 ```
 
@@ -66,7 +66,7 @@ Returns an array of the hashtags used in the text of a tweet (without the # pref
 
 would be:
 
-```
+```javascript
 ['opensource', 'nodejs']
 ```
 
@@ -78,7 +78,7 @@ Returns an array of the URLs used in the text of a tweet. The array will be empt
 
 would be:
 
-```
+```javascript
 ['https://nodejs.org/', 'https://www.npmjs.com/']
 ```
 
